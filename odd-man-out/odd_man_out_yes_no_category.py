@@ -63,7 +63,6 @@ def get_instances(puzzles, category):
         instances.append(instance)
     return instances
 
-
 def create_json(puzzles, json_filename, category):
     json_file = {}
     json_file["Contributors"] = ["Eshaan Pathak"]
