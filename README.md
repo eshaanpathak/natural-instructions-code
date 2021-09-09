@@ -14,5 +14,8 @@ I have contributed the following datasets so far:
   * Given a story, answer the question regarding a character's beliefs about reality or another character's beliefs.
 * [CODAH](https://arxiv.org/abs/1904.04365)
   * Given a prompt and four completions, select the completion that is the most plausible in continuing or answering the prompt.
+* [StereoSet](https://arxiv.org/abs/2004.09456)
+  * Given two sentences regarding the stereotypes of either gender, profession, race, or religion, determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target.
 
-With these 5 datasets, I have contributed 18 tasks, totaling to 81,587 instances. Each task is a variation of the description in each indented bulletpoint above. See the `.json` files in each directory for more information on each task.
+
+With these 6 datasets, I have contributed 22 tasks, totaling to 87,941 instances. Each task is a variation of the description in each indented bulletpoint above. See the `.json` files in each directory for more information on each task.
