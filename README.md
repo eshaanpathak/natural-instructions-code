@@ -16,6 +16,8 @@ I have contributed the following datasets so far:
   * Given a prompt and four completions, select the completion that is the most plausible in continuing or answering the prompt.
 * [StereoSet](https://arxiv.org/abs/2004.09456)
   * Given two sentences regarding the stereotypes of either gender, profession, race, or religion, determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target.
+* [Jeopardy!](https://www.reddit.com/r/datasets/comments/1uyd0t/200000_jeopardy_questions_in_a_json_file/)
+  * Given a category and a trivia clue, generate the best answer that belongs in the category and is described by the clue.
 
 
-With these 6 datasets, I have contributed 22 tasks, totaling to 87,941 instances. Each task is a variation of the description in each indented bulletpoint above. See the `.json` files in each directory for more information on each task.
+With these 7 datasets, I have contributed 26 tasks, totaling to 111,008 instances. Each task is a variation of the description in each indented bulletpoint above. See the `.json` files in each directory for more information on each task.
