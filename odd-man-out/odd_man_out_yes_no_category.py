@@ -31,9 +31,9 @@ def get_definition(category):
 
 def get_positive_examples(category):
     if category:
-        positives = [{"input": "Category: construction\n\n Words: excavator, crane, pelican, hoist, upraise", "output" : "pelican", "explanation" : "A pelican is not related to construction because it is a type of bird."}, \
-                     {"input": "Category: emotional status\n\n Words: annoyed, fine, ok, jail time, calm", "output" : "jail time", "explanation" : "The word 'jail time' is not an emotion that a person feels and is the time one must serve in jail after being convicted guilty of a crime."}, \
-                     {"input": "Category: animals\n\n Words: cat, push, sheep, duck, lion", "output" : "push", "explanation" : "The word 'push' is not an animal and is an act of exerting force."}]
+        positives = [{"input": "Category: construction \nWords: excavator, crane, pelican, hoist, upraise", "output" : "pelican", "explanation" : "A pelican is not related to construction because it is a type of bird."}, \
+                     {"input": "Category: emotional status \nWords: annoyed, fine, ok, jail time, calm", "output" : "jail time", "explanation" : "The word 'jail time' is not an emotion that a person feels and is the time one must serve in jail after being convicted guilty of a crime."}, \
+                     {"input": "Category: animals \nWords: cat, push, sheep, duck, lion", "output" : "push", "explanation" : "The word 'push' is not an animal and is an act of exerting force."}]
     else:
         positives = [{"input": "excavator, crane, pelican, hoist, upraise", "output" : "pelican", "explanation" : "The common category here are words related to construction. A pelican is not related to construction because it is a type of bird."}, \
                      {"input": "annoyed, fine, ok, jail time, calm", "output" : "jail time", "explanation" : "The common category here is 'emotional states'. The word 'jail time' is not an emotion that a person feels and is the time one must serve in jail after being convicted guilty of crime. "}, \
@@ -42,8 +42,8 @@ def get_positive_examples(category):
 
 def get_negative_examples(category):
     if category:
-        negatives = [{"input": "Category: boxing terminology\n\n Words: jab, punch, corner, joker, deck", "output" : "punch", "explanation" : "The word 'punch' is a boxing term that means to strike with a fist. The correct answer is 'joker', which is a different word for a comedian."}, \
-                     {"input": "Category: card games\n\n Words: bridge, gin, canasta, vodka, uno", "output" : "canasta", "explanation" : "Canasta is a card game of the rummy family. The correct answer is 'vodka', which is an alcoholic beverage."}]
+        negatives = [{"input": "Category: boxing terminology \nWords: jab, punch, corner, joker, deck", "output" : "punch", "explanation" : "The word 'punch' is a boxing term that means to strike with a fist. The correct answer is 'joker', which is a different word for a comedian."}, \
+                     {"input": "Category: card games \nWords: bridge, gin, canasta, vodka, uno", "output" : "canasta", "explanation" : "Canasta is a card game of the rummy family. The correct answer is 'vodka', which is an alcoholic beverage."}]
     else:
         negatives = [{"input": "jab, punch, corner, joker, deck", "output" : "punch", "explanation" : "The common category here is 'boxing terminology'. The word 'punch' is a boxing term that means to strike with a fist. The correct answer is 'joker', which is a different word for a comedian."}, \
                      {"input": "bridge, gin, canasta, vodka, uno", "output" : "canasta", "explanation" : "The common category here is 'card games'. Canasta is a card game of the rummy family. The correct answer is 'vodka', which is an alcoholic beverage."}]
@@ -56,11 +56,12 @@ def get_instances(puzzles, category):
         odd_man = puzzle[1]
         words = puzzle[2]
         if category:
-            input_instance = "Category: {}\n\n Words: {}, {}, {}, {}, {}".format(puzzle_category, words[0], words[1], words[2], words[3], words[4])
+            input_instance = "Category: {} \nWords: {}, {}, {}, {}, {}".format(puzzle_category, words[0], words[1], words[2], words[3], words[4])
         else:
             input_instance = "{}, {}, {}, {}, {}".format(words[0], words[1], words[2], words[3], words[4])
         instance = {"input" : input_instance, "output" : [odd_man]}
         instances.append(instance)
+    random.shuffle(instances)
     return instances
 
 def create_json(puzzles, json_filename, category):

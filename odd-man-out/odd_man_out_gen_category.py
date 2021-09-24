@@ -50,6 +50,7 @@ def get_instances(puzzles):
         input_instance = "{}, {}, {}, {}".format(words[0], words[1], words[2], words[3])
         instance = {"input" : input_instance, "output" : [puzzle_category]}
         instances.append(instance)
+    random.shuffle(instances)
     return instances
 
 def create_json(puzzles, json_filename):
